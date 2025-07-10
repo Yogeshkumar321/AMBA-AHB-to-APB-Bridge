@@ -105,24 +105,13 @@ The bridge uses an 8-state FSM to manage AHB to APB transfers. The states, their
 
 ## Simulation Results
 
-![Simulation Waveform](https://i.imgur.com/U7G4kV3.jpg)
+![Simulation Waveform](bridgeoutputwaveform.png)
 
-**Sample Output**:
-```
-Test 1: Single Write Transfer
-Write Test Passed: Address 0x10, Data 0xAAAA_BBBB
+**Schematic**:
 
-Test 2: Single Read Transfer
-Read Test Passed: Address 0x10, Data 0xAAAA_BBBB
+![Schematic](schematic.png)
 
-Test 3: Burst Write Transfer
-Burst Write Test Passed: Address 0x20=0x1111_2222, 0x24=0x3333_4444
 
-Test 4: Timeout Handling
-Timeout Test Passed: Hready asserted after timeout
-
-Simulation Completed
-```
 
 Waveform results (generated in Vivado) confirm correct AHB to APB signal mappings for all test cases.
 
