@@ -2,11 +2,11 @@
 
 module tb_ahb_to_apb_bridge;
 
-    // Clock and Reset
+    
     reg         HCLK;
     reg         HRESETn;
 
-    // AHB Signals
+   
     reg  [31:0] HADDR;
     reg  [1:0]  HTRANS;
     reg         HWRITE;
@@ -18,7 +18,7 @@ module tb_ahb_to_apb_bridge;
     wire [31:0] HRDATA;
     wire [1:0]  HRESP;
 
-    // APB Signals
+   
     wire        PCLK;
     wire        PRESETn;
     wire [31:0] PADDR;
@@ -29,7 +29,7 @@ module tb_ahb_to_apb_bridge;
     reg  [31:0] PRDATA;
     reg         PREADY;
 
-    // Instantiate DUT
+   
     ahb_to_apb_bridge DUT (
         .HCLK(HCLK),
         .HRESETn(HRESETn),
@@ -54,11 +54,10 @@ module tb_ahb_to_apb_bridge;
         .PREADY(PREADY)
     );
 
-    // Clock generation
+   
     initial HCLK = 0;
-    always #5 HCLK = ~HCLK; // 100MHz clock
-
-    // Test sequence
+    always #5 HCLK = ~HCLK; 
+   
     initial begin
         $display("Start of simulation");
         HRESETn = 0;
@@ -72,40 +71,33 @@ module tb_ahb_to_apb_bridge;
         PRDATA  = 32'hDEADBEEF;
         PREADY  = 1;
 
-        // Reset pulse
+     
         #20 HRESETn = 1;
 
-        // -------------------------
-        // 1. SINGLE WRITE TRANSFER
-        // -------------------------
         @(negedge HCLK);
         HADDR   = 32'h0000_0010;
         HWDATA  = 32'hA5A5_A5A5;
         HWRITE  = 1;
-        HTRANS  = 2'b10; // NONSEQ
+        HTRANS  = 2'b10; 
         HSEL    = 1;
         #10 HSEL = 0;
 
-        // Wait until bridge ready
+       
         wait(HREADYOUT);
 
-        // -------------------------
-        // 2. SINGLE READ TRANSFER
-        // -------------------------
+       
         @(negedge HCLK);
         HADDR   = 32'h0000_0010;
         HWRITE  = 0;
-        HTRANS  = 2'b10; // NONSEQ
+        HTRANS  = 2'b10; 
         HSEL    = 1;
         #10 HSEL = 0;
 
-        // Wait until bridge ready
+        
         wait(HREADYOUT);
         $display("Read data: %h", HRDATA);
 
-        // -------------------------
-        // 3. BURST WRITE TRANSFERS
-        // -------------------------
+        
         repeat (4) begin
             @(negedge HCLK);
             HADDR   = HADDR + 4;
@@ -117,9 +109,7 @@ module tb_ahb_to_apb_bridge;
             wait(HREADYOUT);
         end
 
-        // -------------------------
-        // 4. BURST READ TRANSFERS
-        // -------------------------
+       -
         repeat (4) begin
             @(negedge HCLK);
             HADDR   = HADDR + 4;
