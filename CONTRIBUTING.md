@@ -63,7 +63,7 @@ sim/        → Simulation outputs (dump.vcd, logs)
 1. Fork the repository
 2. Create a new branch:
    ```bash
-   git checkout -b feature/<your-feature>
+   git checkout -b feature/<add-burst-read>
    ```
 3. Commit your changes with a meaningful message:
    ```bash
