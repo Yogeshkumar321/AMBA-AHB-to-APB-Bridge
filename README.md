@@ -105,11 +105,11 @@ The bridge uses an 8-state FSM to manage AHB to APB transfers. The states, their
 
 ## Simulation Results
 
-![Simulation Waveform](bridgeoutputwaveform.png)
+![Simulation Waveform](sim/bridgeoutputwaveform.png)
 
 **Schematic**:
 
-![Schematic](schematic.png)
+![Schematic](sim/schematic.png)
 
 
 
