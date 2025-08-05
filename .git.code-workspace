@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".git"
+		},
+		{
+			"path": ".gitignore"
+		},
+		{
+			"path": "docs"
+		},
+		{
+			"path": "sim"
+		},
+		{
+			"path": "src"
+		},
+		{
+			"path": "tb"
+		}
+	]
+}
