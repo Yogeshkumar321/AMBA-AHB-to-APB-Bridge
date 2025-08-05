@@ -139,4 +139,16 @@ Waveform results (generated in Vivado) confirm correct AHB to APB signal mapping
 - AMBA Specification: [AMBA Specifications.pdf](https://github.com/prajwalgekkouga/AHB-to-APB-Bridge/files/9731507/AMBA.Specifications.pdf)
 - AMBA Modules: [AMBA Modules.pdf](https://github.com/prajwalgekkouga/AHB-to-APB-Bridge/files/9731505/AMBA.Modules.pdf)
 - Vivado User Guide: [UG900](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2023_2/ug900-vivado-logic-simulation.pdf)
+
+
+
+
+## 🛠️ Developer Workspace
+
+For users working with **VS Code** or **GitCode’s web IDE**, you can open the pre-configured workspace file to instantly load the project structure and folders:
+
+```bash
+ahb_to_apb_bridge.code-workspace
+
+
 ```
