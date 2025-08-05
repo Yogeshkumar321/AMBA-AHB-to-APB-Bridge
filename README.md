@@ -143,12 +143,7 @@ Waveform results (generated in Vivado) confirm correct AHB to APB signal mapping
 
 
 
-## 🛠️ Developer Workspace
 
-For users working with **VS Code** or **GitCode’s web IDE**, you can open the pre-configured workspace file to instantly load the project structure and folders:
-
-```bash
-ahb_to_apb_bridge.code-workspace
 
 
 ```
